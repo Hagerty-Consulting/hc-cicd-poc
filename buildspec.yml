@@ -13,10 +13,8 @@ phases:
       - cd app/funcA && zip -r ../../funcA.zip . && cd ../../
   post_build:
     commands:
-      - echo "Deploying funcA to Lambda…"
-      - aws lambda update-function-code \
-          --function-name funcA-poc \
-          --zip-file fileb://funcA.zip
+      - aws lambda update-function-code --function-name funcA-poc --zip-file fileb://funcA.zip
+
 artifacts:
   files:
     - funcA.zip
