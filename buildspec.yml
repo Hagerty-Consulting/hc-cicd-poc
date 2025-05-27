@@ -11,10 +11,13 @@ phases:
       - echo "Building funcA…"
       - pip install -r app/funcA/requirements.txt -t app/funcA/
       - cd app/funcA && zip -r ../../funcA.zip . && cd ../../
-      - echo "Building funcB…"
-      - pip install -r app/funcB/requirements.txt -t app/funcB/
-      - cd app/funcB && zip -r ../../funcB.zip . && cd ../../
+    post_build:
+    commands:
+      - echo "Deploying funcA to Lambda…"
+      - aws lambda update-function-code \
+          --function-name funcA-poc \
+          --zip-file fileb://funcA.zip
 artifacts:
   files:
     - funcA.zip
-    - funcB.zip
+
