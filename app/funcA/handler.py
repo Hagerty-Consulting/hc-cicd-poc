@@ -1,11 +1,10 @@
-from pyfiglet import Figlet
+import requests
 
 def lambda_handler(event, context):
-
-    text = event.get("queryStringParameters", {}) .get("text", "Hello")
-    fig = Figlet(font="standard")
-    art = fig.renderText(text)
+    # fetch a random cat fact
+    resp = requests.get("https://catfact.ninja/fact")
+    fact = resp.json().get("fact", "No fact found.")
     return {
         "statusCode": 200,
-        "body": art
+        "body": fact
     }
