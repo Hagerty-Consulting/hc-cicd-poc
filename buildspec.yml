@@ -16,6 +16,6 @@ phases:
       - aws lambda update-function-code --function-name funcA-poc --zip-file fileb://funcA.zip
 
 artifacts:
-  files:
+  files: 
     - funcA.zip 
  
