@@ -11,7 +11,7 @@ phases:
       - echo "Building funcA…"
       - pip install -r app/funcA/requirements.txt -t app/funcA/
       - cd app/funcA && zip -r ../../funcA.zip . && cd ../../
-    post_build:
+  post_build:
     commands:
       - echo "Deploying funcA to Lambda…"
       - aws lambda update-function-code \
