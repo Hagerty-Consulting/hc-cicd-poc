@@ -2,10 +2,8 @@ import requests
 
 def lambda_handler(event, context):
     
-    resp = requests.get("https://catfact.ninja/fact") 
-    fact = resp.json().get("fact", "No fact found.")
+    print("Hello World!")
 
     return {
-        "statusCode": 200,
-        "body": fact
+        "statusCode": 200
     }
