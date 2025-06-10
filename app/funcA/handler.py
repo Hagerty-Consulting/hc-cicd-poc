@@ -4,7 +4,7 @@ def lambda_handler(event, context):
     
     print("Hello World!")
 
-    return {
+    return { 
         "statusCode": 200, 
         "body": "this is a test"  
     }   
