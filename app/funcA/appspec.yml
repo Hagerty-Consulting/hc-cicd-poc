@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+resources:
+  - myLambdaFunction:
+      type: AWS::Lambda::Function
+      properties:
+        Name: "funcA-poc" # Your Lambda function name
+        Alias: "PROD" # The alias CodeDeploy will manage
+        CurrentVersion: "$LATEST"
+        TargetVersion: "NewFunctionVersion"
+hooks:
+  BeforeAllowTraffic: # Optional: Remove this section if no hook functions are used
+    - !Ref PreTrafficHookFunction
+  AfterAllowTraffic: # Optional: Remove this section if no hook functions are used
+    - !Ref PostTrafficHookFunction
