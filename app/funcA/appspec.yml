@@ -1,9 +1,9 @@
 version: 0.0
 resources:
-  - myLambdaFunction:
+  - funcA-poc:
       type: AWS::Lambda::Function
       properties:
         Name: "funcA-poc"
         Alias: "PROD"
-        CurrentVersion: 8
-        TargetVersion: 9
+        CurrentVersion: 9
+        TargetVersion: 10
