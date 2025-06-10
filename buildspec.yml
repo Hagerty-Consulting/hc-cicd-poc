@@ -6,17 +6,19 @@ phases:
       python: 3.9
     commands:
       - pip install --upgrade pip
+
   build:
     commands:
       - echo "Building funcA…"
       - pip install -r app/funcA/requirements.txt -t app/funcA/
       - cd app/funcA && zip -r ../../funcA.zip . && cd ../../
+
   post_build:
     commands:
-      - aws lambda update-function-code --function-name funcA-poc --zip-file fileb://funcA.zip
+      - echo "Build completed. Preparing artifacts for CodeDeploy."
 
 artifacts:
-  files: 
-    - funcA.zip 
- 
- 
+  files:
+    - funcA.zip
+    - app/funcA/appspec.yml
+  discard-paths: yes 
