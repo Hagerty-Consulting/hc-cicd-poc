@@ -1,11 +1,9 @@
-# appspec.yml
 version: 0.0
-os: linux
 resources:
   - myLambdaFunction:
       type: AWS::Lambda::Function
       properties:
-        Name: "funcA-poc" # Your Lambda function name
-        Alias: "PROD"    # The alias CodeDeploy will manage
+        Name: "funcA-poc"
+        Alias: "PROD"
         CurrentVersion: "$LATEST"
         TargetVersion: "NewFunctionVersion"
