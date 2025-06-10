@@ -3,6 +3,12 @@ import requests
 def lambda_handler(event, context):
     
     print("Hello World!")
+    print("Hello World!")
+    print("Hello World!")
+    print("Hello World!")
+    print("Hello World!")
+    print("Hello World!")
+    print("Hello World!")
 
     return { 
         "statusCode": 200, 
