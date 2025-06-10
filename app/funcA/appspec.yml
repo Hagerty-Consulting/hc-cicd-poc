@@ -4,5 +4,6 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: "funcA-poc"
+        Alias: "PROD"
         CurrentVersion: "8"
         TargetVersion: "9"
