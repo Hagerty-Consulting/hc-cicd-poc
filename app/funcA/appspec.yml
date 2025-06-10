@@ -5,5 +5,3 @@ resources:
       properties:
         Name: "funcA-poc"
         Alias: "PROD"
-        CurrentVersion: "$LATEST"
-        TargetVersion: "NewFunctionVersion"
